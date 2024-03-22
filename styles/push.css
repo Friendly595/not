@@ -1,0 +1,25 @@
+.toast {
+	width: 250px;
+	overflow: hidden;
+	font: 11px 'Myriad Pro', sans-serif;
+	color: #fdfdfd;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	display: none;
+	box-shadow: 0px 0px 12px rgb(126 122 122 / 75%);
+}
+
+.toast:not(:last-child) { margin-bottom: 1.20rem; transition: all 0.7s; }
+
+.toast_show { display: block; }
+
+.toast__header {
+	font: 13px 'Myriad Pro', sans-serif;
+	font-weight: bold;
+	padding: 10px 15px;
+	color: white;
+	background: linear-gradient(to left, #fff0, #a1a1a1);
+	transition: all 5s;
+}
+
+.toast__body {padding: 0.75rem; }
