@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="./styles/push.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="files/gsap.min.js"></script>
+    <script src="files/vue.js"></script>
+    <link rel="stylesheet" href="files/main.css">
 </head>
 <body>
-    <script src="./js/push.js"></script>
-        <script>
-                cef.on("notifical:player:data", (headers, text, colors, hide, time) => {
-                        Toast.add({header: headers, body: text, color: '#' + colors, autohide: hide, delay: time});
-                });
-        </script>
+<div id="app">
+    <transition-group name="list-complete" tag="div">
+        <div class="element" v-for="el of notifi" :key="el.message">
+            <div :class="'loader ' + el.type" :style="`width: ${el.loading}%`"></div>
+            <img :src="'files/'+ el.type +'.svg'" alt="">
+            <div class="texts">
+                <span class="title">{{ el.title }}</span>
+                <span class="message">{{ el.message }}</span>
+            </div>
+        </div>
+    </transition-group>
+</div>
+<script src="files/main.js"></script>
 </body>
 </html>
